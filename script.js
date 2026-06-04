@@ -595,36 +595,66 @@
   const toggle = document.getElementById("navToggle");
   const links = document.getElementById("navLinks");
   const backdrop = document.getElementById("navBackdrop");
+  const navInner = document.querySelector(".nav__inner");
+  const langBtn = document.getElementById("langToggle");
+  const mainEl = document.querySelector("main");
+  const mqNavMobile = window.matchMedia("(max-width: 980px)");
 
   const updateMenuAria = () => {
     if (!toggle || !links) return;
     const open = links.classList.contains("is-open");
     toggle.setAttribute("aria-label", t(open ? "nav.menuClose" : "nav.menuOpen"));
     if (backdrop) backdrop.setAttribute("aria-label", t("nav.menuClose"));
+    links.setAttribute("aria-hidden", open ? "false" : "true");
   };
-
-  let menuScrollY = 0;
 
   const closeMenu = () => {
     if (!links || !toggle) return;
     links.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
-    document.body.style.top = "";
-    window.scrollTo(0, menuScrollY);
     if (backdrop) backdrop.hidden = true;
     updateMenuAria();
   };
   const openMenu = () => {
     if (!links || !toggle) return;
-    menuScrollY = window.scrollY || window.pageYOffset || 0;
-    document.body.style.top = "-" + menuScrollY + "px";
     links.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
     document.body.classList.add("menu-open");
     if (backdrop) backdrop.hidden = false;
     updateMenuAria();
   };
+
+  const placeNavForViewport = () => {
+    if (!links || !navInner || !nav) return;
+    if (mqNavMobile.matches) {
+      if (mainEl) {
+        if (backdrop && backdrop.parentElement !== document.body) {
+          document.body.insertBefore(backdrop, mainEl);
+        }
+        if (links.parentElement !== document.body) {
+          document.body.insertBefore(links, mainEl);
+        }
+      }
+    } else {
+      closeMenu();
+      if (langBtn && links.parentElement !== navInner) {
+        navInner.insertBefore(links, langBtn);
+      }
+      if (backdrop && backdrop.parentElement !== nav) {
+        nav.appendChild(backdrop);
+      }
+      links.removeAttribute("aria-hidden");
+    }
+    updateMenuAria();
+  };
+
+  placeNavForViewport();
+  if (typeof mqNavMobile.addEventListener === "function") {
+    mqNavMobile.addEventListener("change", placeNavForViewport);
+  } else if (typeof mqNavMobile.addListener === "function") {
+    mqNavMobile.addListener(placeNavForViewport);
+  }
 
   if (toggle && links) {
     toggle.addEventListener("click", () => {
