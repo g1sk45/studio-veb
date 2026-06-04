@@ -29,7 +29,7 @@
       "izrada sajtova, web dizajn, sajt po meri, izrada web sajta, web dizajn Srbija, responzivni sajt, landing stranica, SEO, Studio Veb",
     keywordsEn:
       "website design Serbia, custom website, web development, responsive website, landing page, SEO, Studio Veb",
-    ogImagePath: "/assets/og-image.png?v=5"
+    ogImagePath: "/assets/og-image.jpg?v=6"
   };
 
   const seoCfg = () => ({ ...SEO_DEFAULTS, ...(CFG.seo || {}) });
@@ -68,7 +68,7 @@
       const canon = document.getElementById("canonicalLink");
       if (canon) canon.href = home;
       document.querySelectorAll('meta[property="og:url"]').forEach((m) => { m.content = home; });
-      const ogPath = (s.ogImagePath || "/assets/og-image.png").replace(/^\//, "");
+      const ogPath = (s.ogImagePath || "/assets/og-image.jpg?v=6").replace(/^\//, "");
       const ogImg = base + "/" + ogPath;
       document.querySelectorAll('meta[property="og:image"], meta[property="og:image:secure_url"], meta[name="twitter:image"]').forEach((m) => {
         m.content = ogImg;
