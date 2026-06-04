@@ -129,10 +129,7 @@
       }
       meta.content = CFG.googleSiteVerification;
     }
-    const accessKey = document.getElementById("formAccessKey");
-    if (accessKey && CFG.web3formsAccessKey && CFG.web3formsAccessKey !== "YOUR_WEB3FORMS_ACCESS_KEY") {
-      accessKey.value = CFG.web3formsAccessKey;
-    }
+    syncFormAccessKey();
     const waUrl = "https://wa.me/" + (CFG.whatsapp || "381612892059") + "?text=" +
       encodeURIComponent("Zdravo! Zanima me izrada sajta — Studio Veb.");
     ["whatsappLink", "whatsappFloat"].forEach((id) => {
@@ -156,6 +153,23 @@
       }
     });
   };
+
+  const getWeb3FormsKey = () => {
+    const fromCfg = (CFG.web3formsAccessKey || "").trim();
+    if (fromCfg && fromCfg !== "YOUR_WEB3FORMS_ACCESS_KEY") return fromCfg;
+    const input = document.getElementById("formAccessKey");
+    const fromInput = input ? input.value.trim() : "";
+    if (fromInput && fromInput !== "YOUR_WEB3FORMS_ACCESS_KEY") return fromInput;
+    return "";
+  };
+
+  const syncFormAccessKey = () => {
+    const key = getWeb3FormsKey();
+    const input = document.getElementById("formAccessKey");
+    if (input && key) input.value = key;
+    return key;
+  };
+
   applySiteConfig();
 
   /* ========================================================
@@ -664,10 +678,7 @@
     field.closest(".field").classList.toggle("is-invalid", hasError);
   };
 
-  const hasFormBackend = () => {
-    const key = document.getElementById("formAccessKey");
-    return key && key.value && key.value !== "YOUR_WEB3FORMS_ACCESS_KEY";
-  };
+  const hasFormBackend = () => Boolean(syncFormAccessKey());
 
   if (form) {
     form.addEventListener("submit", async (e) => {
@@ -716,7 +727,8 @@
         return;
       }
 
-      if (!hasFormBackend()) {
+      const accessKey = syncFormAccessKey();
+      if (!accessKey) {
         status.classList.add("is-error");
         status.textContent = t("form.notConfigured");
         const wa = document.getElementById("whatsappLink");
@@ -729,9 +741,11 @@
       btn.textContent = t("form.sending");
 
       try {
+        const payload = new FormData(form);
+        payload.set("access_key", accessKey);
         const res = await fetch(form.action, {
           method: "POST",
-          body: new FormData(form),
+          body: payload,
           headers: { Accept: "application/json" }
         });
         const data = await res.json().catch(() => ({}));
