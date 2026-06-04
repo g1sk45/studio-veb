@@ -6,7 +6,7 @@ window.SITE_CONFIG = {
   /** Pun URL sajta (bez trailing slash) — koristi se za canonical, OG, sitemap */
   url: "https://studioveb.rs",
 
-  email: "zdravo@studioveb.rs",
+  email: "ognjen@studioveb.rs",
   /** Format za tel: link i WhatsApp (bez + i razmaka za wa.me) */
   phoneDisplay: "+381 61 289 2059",
   phoneE164: "+381612892059",
@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
    * 2. Kopiraj Access Key ovde
    * Ključ je javan u browseru — rotiraj ga na web3forms.com ako curi; u panelu uključi CAPTCHA za jaču anti-spam zaštitu.
    */
-  web3formsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+  web3formsAccessKey: "f2547dc4-4bf3-49f3-a4c6-951d188289f8",
 
   /** Google Search Console verification (opciono) — meta content vrednost */
   googleSiteVerification: "",

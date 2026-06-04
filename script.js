@@ -9,7 +9,7 @@
 
   const CFG = window.SITE_CONFIG || {
     url: "https://studioveb.rs",
-    email: "zdravo@studioveb.rs",
+    email: "ognjen@studioveb.rs",
     phoneDisplay: "+381 61 289 2059",
     phoneE164: "+381612892059",
     whatsapp: "381612892059",
@@ -141,8 +141,11 @@
     });
     const phoneLink = document.getElementById("phoneLink");
     if (phoneLink && CFG.phoneE164) phoneLink.href = "tel:" + CFG.phoneE164.replace(/\s/g, "");
-    document.querySelectorAll('a[href="mailto:zdravo@studioveb.rs"]').forEach((a) => {
-      if (CFG.email) a.href = "mailto:" + CFG.email;
+    document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+      if (CFG.email) {
+        a.href = "mailto:" + CFG.email;
+        if (a.closest(".footer__contact")) a.textContent = CFG.email;
+      }
     });
     document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
       if (CFG.phoneE164) {
