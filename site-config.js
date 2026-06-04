@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
    * 2. Kopiraj Access Key ovde
    * Ključ je javan u browseru — rotiraj ga na web3forms.com ako curi; u panelu uključi CAPTCHA za jaču anti-spam zaštitu.
    */
-  web3formsAccessKey: "f2547dc4-4bf3-49f3-a4c6-951d188289f8",
+  web3formsAccessKey: "f2547dc4-4bf3-49f3-a4c6-951d180209f8",
 
   /** Google Search Console verification (opciono) — meta content vrednost */
   googleSiteVerification: "",
