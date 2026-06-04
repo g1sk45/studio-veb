@@ -39,6 +39,6 @@ window.SITE_CONFIG = {
     keywordsEn:
       "website design Serbia, custom website, web development, responsive website, landing page, SEO, Studio Veb",
     /** Apsolutna putanja do OG slike (PNG 1200×630 preporučeno za Viber/Facebook) */
-    ogImagePath: "/assets/og-image.jpg?v=6"
+    ogImagePath: "/assets/og-image.jpg?v=7"
   }
 };

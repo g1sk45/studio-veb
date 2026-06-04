@@ -21,6 +21,6 @@ window.SITE_CONFIG = {
       "izrada sajtova, web dizajn, sajt po meri, izrada web sajta, web dizajn Srbija, responzivni sajt, landing stranica, SEO, Studio Veb",
     keywordsEn:
       "website design Serbia, custom website, web development, responsive website, landing page, SEO, Studio Veb",
-    ogImagePath: "/assets/og-image.jpg?v=6"
+    ogImagePath: "/assets/og-image.jpg?v=7"
   }
 };

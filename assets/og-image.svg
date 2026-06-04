@@ -1,21 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0B0F"/>
+      <stop offset="55%" stop-color="#12101c"/>
       <stop offset="100%" stop-color="#1a1530"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#7C5CFC" stop-opacity="0.45"/>
+    <radialGradient id="glow" cx="72%" cy="28%" r="45%">
+      <stop offset="0%" stop-color="#7C5CFC" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#7C5CFC" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="cta" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6B4AE8"/>
+      <stop offset="100%" stop-color="#9D86FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#7C5CFC" flood-opacity="0.35"/>
+    </filter>
   </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <rect x="80" y="80" width="48" height="48" rx="12" fill="#7C5CFC"/>
-  <rect x="104" y="104" width="48" height="48" rx="12" fill="#9D86FF" opacity="0.85"/>
-  <text x="170" y="125" fill="#F4F4F6" font-family="system-ui,sans-serif" font-size="42" font-weight="700">Studio</text>
-  <text x="318" y="125" fill="#9D86FF" font-family="system-ui,sans-serif" font-size="42" font-weight="700">Veb</text>
-  <text x="80" y="220" fill="#F4F4F6" font-family="system-ui,sans-serif" font-size="56" font-weight="700">Moderni sajtovi po meri</text>
-  <text x="80" y="290" fill="#A2A2AE" font-family="system-ui,sans-serif" font-size="32">Web dizajn &amp; izrada — ve? od 150€</text>
-  <text x="80" y="540" fill="#7C5CFC" font-family="system-ui,sans-serif" font-size="28" font-weight="600">studioveb.rs</text>
+  <!-- grid hint -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+  <!-- logo -->
+  <rect x="72" y="72" width="44" height="44" rx="11" fill="#7C5CFC"/>
+  <rect x="94" y="94" width="44" height="44" rx="11" fill="#9D86FF" opacity="0.9"/>
+  <text x="158" y="118" fill="#F4F4F6" font-family="system-ui,Segoe UI,sans-serif" font-size="38" font-weight="700">Studio</text>
+  <text x="292" y="118" fill="#9D86FF" font-family="system-ui,Segoe UI,sans-serif" font-size="38" font-weight="700">Veb</text>
+  <!-- headline -->
+  <text x="72" y="248" fill="#F4F4F6" font-family="system-ui,Segoe UI,sans-serif" font-size="72" font-weight="800" letter-spacing="-1">Sajt koji prodaje</text>
+  <text x="72" y="318" fill="#9D86FF" font-family="system-ui,Segoe UI,sans-serif" font-size="52" font-weight="700">od 150€</text>
+  <text x="72" y="378" fill="#A2A2AE" font-family="system-ui,Segoe UI,sans-serif" font-size="30">Moderni web dizajn · SEO · brzina</text>
+  <!-- badge -->
+  <rect x="72" y="408" width="320" height="44" rx="22" fill="rgba(124,92,252,0.18)" stroke="#7C5CFC" stroke-width="1.5"/>
+  <text x="232" y="438" text-anchor="middle" fill="#9D86FF" font-family="system-ui,sans-serif" font-size="20" font-weight="600">Besplatna procena u 24h</text>
+  <!-- CTA -->
+  <g filter="url(#shadow)">
+    <rect x="720" y="300" width="408" height="88" rx="44" fill="url(#cta)"/>
+    <text x="924" y="356" text-anchor="middle" fill="#0B0B0F" font-family="system-ui,sans-serif" font-size="32" font-weight="700">Klikni za cene ?</text>
+  </g>
+  <!-- cursor -->
+  <path d="M 1080 268 L 1080 332 L 1048 300 L 1064 300 L 1040 268 Z" fill="#F4F4F6" stroke="#0B0B0F" stroke-width="2"/>
+  <!-- URL -->
+  <text x="72" y="560" fill="#7C5CFC" font-family="system-ui,sans-serif" font-size="36" font-weight="700">studioveb.rs</text>
 </svg>
