@@ -1,0 +1,4 @@
+# SPA: deep linkovi (/work, /pricing…) serviraju početnu sa istim OG meta tagovima
+/privacy.html  /privacy.html  200
+/zohoverify/*   /zohoverify/:splat  200
+/*             /index.html     200

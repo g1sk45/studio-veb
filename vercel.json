@@ -1,4 +1,9 @@
 {
+  "rewrites": [
+    { "source": "/privacy.html", "destination": "/privacy.html" },
+    { "source": "/zohoverify/(.*)", "destination": "/zohoverify/$1" },
+    { "source": "/((?!assets/|favicon\\.svg|robots\\.txt|sitemap\\.xml|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

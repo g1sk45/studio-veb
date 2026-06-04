@@ -6,6 +6,7 @@
 2. Poveži repo sa Netlify / Vercel / Cloudflare Pages (build nije potreban — samo statički fajlovi).
 3. Publish directory: koren projekta (`index.html` u root-u).
 4. Posle deploya postavi `web3formsAccessKey` u `site-config.js` na hostu ili kroz env ako host podržava zamenu fajla.
+5. **Deep linkovi** (`/work`, `/pricing`…): fajl `_redirects` na Netlify servira `index.html` (isti OG kao početna). Deljenje: `https://studioveb.rs/work` radi preview slike.
 
 ## 1. Domen i hosting
 

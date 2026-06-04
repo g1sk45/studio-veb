@@ -29,7 +29,7 @@
       "izrada sajtova, web dizajn, sajt po meri, izrada web sajta, web dizajn Srbija, responzivni sajt, landing stranica, SEO, Studio Veb",
     keywordsEn:
       "website design Serbia, custom website, web development, responsive website, landing page, SEO, Studio Veb",
-    ogImagePath: "/assets/og-image.png?v=3"
+    ogImagePath: "/assets/og-image.png?v=4"
   };
 
   const seoCfg = () => ({ ...SEO_DEFAULTS, ...(CFG.seo || {}) });
@@ -678,6 +678,28 @@
   })();
   const initial = urlLang || (saved === "en" ? "en" : "sr");
   applyLang(initial);
+
+  /* ---------- Deep link putanje (/work → #work) za deljenje i Netlify _redirects ---------- */
+  const PATH_TO_SECTION = {
+    "/services": "#services",
+    "/work": "#work",
+    "/pricing": "#pricing",
+    "/process": "#process",
+    "/about": "#about",
+    "/faq": "#faq",
+    "/contact": "#contact"
+  };
+  const scrollToPathSection = () => {
+    const path = window.location.pathname.replace(/\/$/, "") || "/";
+    const sel = PATH_TO_SECTION[path];
+    if (!sel) return;
+    const target = document.querySelector(sel);
+    if (!target) return;
+    const go = () => target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (document.readyState === "complete") go();
+    else window.addEventListener("load", go, { once: true });
+  };
+  scrollToPathSection();
 
   const langToggle = document.getElementById("langToggle");
   if (langToggle) {
