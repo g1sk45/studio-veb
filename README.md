@@ -70,3 +70,4 @@ Bez `web3formsAccessKey` forma upućuje na WhatsApp. Sa ključem — slanje prek
 
 - Boje → `styles.css` (`:root`)
 - Tekst → `index.html` + `script.js` (`I18N`)
+# studio-veb
