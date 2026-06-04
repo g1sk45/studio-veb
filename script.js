@@ -29,7 +29,7 @@
       "izrada sajtova, web dizajn, sajt po meri, izrada web sajta, web dizajn Srbija, responzivni sajt, landing stranica, SEO, Studio Veb",
     keywordsEn:
       "website design Serbia, custom website, web development, responsive website, landing page, SEO, Studio Veb",
-    ogImagePath: "/assets/og-image.png"
+    ogImagePath: "/assets/og-image.png?v=3"
   };
 
   const seoCfg = () => ({ ...SEO_DEFAULTS, ...(CFG.seo || {}) });
@@ -70,12 +70,13 @@
       document.querySelectorAll('meta[property="og:url"]').forEach((m) => { m.content = home; });
       const ogPath = (s.ogImagePath || "/assets/og-image.png").replace(/^\//, "");
       const ogImg = base + "/" + ogPath;
-      document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach((m) => {
+      document.querySelectorAll('meta[property="og:image"], meta[property="og:image:secure_url"], meta[name="twitter:image"]').forEach((m) => {
         m.content = ogImg;
       });
       const ogType = document.querySelector('meta[property="og:image:type"]');
+      const ogPathClean = ogPath.split("?")[0];
       if (ogType) {
-        ogType.content = ogPath.endsWith(".png") ? "image/png" : ogPath.endsWith(".jpg") || ogPath.endsWith(".jpeg")
+        ogType.content = ogPathClean.endsWith(".png") ? "image/png" : ogPathClean.endsWith(".jpg") || ogPathClean.endsWith(".jpeg")
           ? "image/jpeg"
           : "image/svg+xml";
       }

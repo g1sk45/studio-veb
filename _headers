@@ -22,3 +22,9 @@
 
 /*.js
   Cache-Control: public, max-age=604800, immutable
+
+# OG slika mora biti javno učitljiva (Facebook, Viber, WhatsApp crawleri)
+/assets/og-image.png
+  Cross-Origin-Resource-Policy: cross-origin
+  Cache-Control: public, max-age=3600
+  Content-Type: image/png
