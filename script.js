@@ -19,8 +19,8 @@
   };
 
   const SEO_DEFAULTS = {
-    titleSr: "Izrada sajtova po meri | Web dizajn — Studio Veb od 150€",
-    titleEn: "Custom Website Design Serbia | Studio Veb from €150",
+    titleSr: "Sajt koji prodaje — od 150€ | Studio Veb",
+    titleEn: "A Site That Sells — From €150 | Studio Veb",
     descriptionSr:
       "Izrada modernih responzivnih sajtova za male biznise u Srbiji. Web dizajn, SEO i brzina uključeni. Transparentne cene od 150€. Besplatna procena u 24h.",
     descriptionEn:
@@ -348,7 +348,7 @@
       "form.error": "Greška pri slanju. Piši na WhatsApp ili email.",
       "form.notConfigured": "Forma još nije povezana — postavi Web3Forms ključ u site-config.js ili piši na WhatsApp.",
       "form.rateLimit": "Previše pokušaja. Sačekaj 10 minuta ili piši na WhatsApp.",
-      "doc.title": "Izrada sajtova po meri | Web dizajn — Studio Veb od 150€"
+      "doc.title": "Sajt koji prodaje — od 150€ | Studio Veb"
     },
 
     en: {
@@ -523,7 +523,7 @@
       "form.error": "Something went wrong. Try WhatsApp or email.",
       "form.notConfigured": "Form not connected yet — add your Web3Forms key in site-config.js or use WhatsApp.",
       "form.rateLimit": "Too many attempts. Wait 10 minutes or use WhatsApp.",
-      "doc.title": "Custom Website Design Serbia | Studio Veb from €150"
+      "doc.title": "A Site That Sells — From €150 | Studio Veb"
     }
   };
 

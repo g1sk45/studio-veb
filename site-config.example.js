@@ -11,8 +11,8 @@ window.SITE_CONFIG = {
   web3formsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
   googleSiteVerification: "",
   seo: {
-    titleSr: "Izrada sajtova po meri | Web dizajn — Studio Veb od 150€",
-    titleEn: "Custom Website Design Serbia | Studio Veb from €150",
+    titleSr: "Sajt koji prodaje — od 150€ | Studio Veb",
+    titleEn: "A Site That Sells — From €150 | Studio Veb",
     descriptionSr:
       "Izrada modernih responzivnih sajtova za male biznise u Srbiji. Web dizajn, SEO i brzina uključeni. Transparentne cene od 150€. Besplatna procena u 24h.",
     descriptionEn:
