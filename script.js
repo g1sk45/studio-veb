@@ -603,16 +603,22 @@
     if (backdrop) backdrop.setAttribute("aria-label", t("nav.menuClose"));
   };
 
+  let menuScrollY = 0;
+
   const closeMenu = () => {
     if (!links || !toggle) return;
     links.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
+    document.body.style.top = "";
+    window.scrollTo(0, menuScrollY);
     if (backdrop) backdrop.hidden = true;
     updateMenuAria();
   };
   const openMenu = () => {
     if (!links || !toggle) return;
+    menuScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.top = "-" + menuScrollY + "px";
     links.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
     document.body.classList.add("menu-open");
