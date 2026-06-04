@@ -1,0 +1,18 @@
+{
+  "name": "Studio Veb — izrada sajtova po meri",
+  "short_name": "Studio Veb",
+  "description": "Web dizajn i izrada modernih responzivnih sajtova za male biznise u Srbiji.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0F",
+  "theme_color": "#0B0B0F",
+  "lang": "sr",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

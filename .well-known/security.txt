@@ -1,0 +1,6 @@
+Contact: mailto:zdravo@studioveb.rs
+Preferred-Languages: sr, en
+Canonical: https://studioveb.rs/.well-known/security.txt
+Policy: https://studioveb.rs/privacy.html
+
+# Prijavi ranjivosti na email. Odgovor u roku od 7 radnih dana.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B0F"/>
+      <stop offset="100%" stop-color="#1a1530"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#7C5CFC" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#7C5CFC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="80" y="80" width="48" height="48" rx="12" fill="#7C5CFC"/>
+  <rect x="104" y="104" width="48" height="48" rx="12" fill="#9D86FF" opacity="0.85"/>
+  <text x="170" y="125" fill="#F4F4F6" font-family="system-ui,sans-serif" font-size="42" font-weight="700">Studio</text>
+  <text x="318" y="125" fill="#9D86FF" font-family="system-ui,sans-serif" font-size="42" font-weight="700">Veb</text>
+  <text x="80" y="220" fill="#F4F4F6" font-family="system-ui,sans-serif" font-size="56" font-weight="700">Moderni sajtovi po meri</text>
+  <text x="80" y="290" fill="#A2A2AE" font-family="system-ui,sans-serif" font-size="32">Web dizajn &amp; izrada — ve? od 150€</text>
+  <text x="80" y="540" fill="#7C5CFC" font-family="system-ui,sans-serif" font-size="28" font-weight="600">studioveb.rs</text>
+</svg>

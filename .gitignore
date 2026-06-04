@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editori
+.vscode/
+.idea/
+*.swp
+*~
+
+# Lokalni config sa pravim ključevima (kopiraj iz site-config.example.js)
+site-config.local.js
+
+# Env / tajne
+.env
+.env.*
+!.env.example
+
+# Logovi i privremeno
+*.log
+.cache/
+
+# Cursor / agent artefakti (screenshoti van sajta)
+design-element-*.png

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Stranica sa noindex — ne šalji je u sitemap
+Disallow: /privacy.html
+
+Sitemap: https://studioveb.rs/sitemap.xml
