@@ -227,6 +227,7 @@ p { font-size: var(--fs-p); line-height: 1.5; }     /* p = 150% */
   padding-top: max(var(--sp-2), env(safe-area-inset-top, 0px));
   transition: background var(--t-fast), border-color var(--t-fast), padding var(--t-fast);
   border-bottom: 1px solid transparent;
+  overflow: visible;
 }
 .nav.is-scrolled {
   background: rgba(11, 11, 15, 0.72);
@@ -914,20 +915,40 @@ p { font-size: var(--fs-p); line-height: 1.5; }     /* p = 150% */
   .about { grid-template-columns: 1fr; }
   .about__media { max-width: 420px; }
   .showcase { grid-template-columns: 1fr; gap: var(--sp-4); }
-  .showcase__cta { width: 100%; max-width: 100%; }
+  .showcase__cta {
+    width: 100%;
+    max-width: 100%;
+  }
+  .about__media {
+    overflow: hidden;
+    max-width: 100%;
+  }
   .browser { overflow-x: clip; }
   .browser__frame { display: none !important; }
   .browser__sizer { display: none !important; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
 
   /* Mobilni meni + tablet (bez iframe preview-a) */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  main {
+    overflow-x: hidden;
+  }
   .nav__lang { margin-left: auto; margin-right: var(--sp-1); }
   .nav__toggle { display: flex; z-index: 112; }
-  /* backdrop-filter na headeru pravi containing block — meni se seče na visinu nav bara */
+  /* backdrop-filter na headeru seče fixed meni — na touch uvek isključen */
+  .nav,
+  .nav.is-scrolled,
   body.menu-open .nav,
   body.menu-open .nav.is-scrolled {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+  .nav.is-scrolled {
+    background: rgba(11, 11, 15, 0.92);
   }
   .nav__links {
     position: fixed;
@@ -950,16 +971,24 @@ p { font-size: var(--fs-p); line-height: 1.5; }     /* p = 150% */
     padding-bottom: max(var(--sp-5), env(safe-area-inset-bottom, 0px));
     background: var(--bg-elev);
     border-left: 1px solid var(--line);
-    transform: translateX(100%);
-    transition: transform var(--t);
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(100%, 0, 0);
+    transition: transform var(--t), visibility 0s linear var(--t);
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
   .nav__links.is-open {
-    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition: transform var(--t), visibility 0s;
     box-shadow: -20px 0 60px rgba(0, 0, 0, 0.55);
+  }
+  .nav__links:not(.is-open) {
+    pointer-events: none;
   }
   .nav__links a:not(.btn) {
     font-size: 1.125rem;
@@ -1032,9 +1061,6 @@ p { font-size: var(--fs-p); line-height: 1.5; }     /* p = 150% */
   .section__sub {
     overflow-wrap: anywhere;
     word-break: break-word;
-  }
-  .nav__links:not(.is-open) {
-    pointer-events: none;
   }
   .section { padding-block: var(--sp-7); }
   .grid--3, .grid--2 { grid-template-columns: 1fr; }
