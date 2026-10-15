@@ -6,7 +6,7 @@ window.SITE_CONFIG = {
   /** Pun URL sajta (bez trailing slash) — koristi se za canonical, OG, sitemap */
   url: "https://studioveb.rs",
 
-  email: "ognjen@studioveb.rs",
+  email: "ognjenbandobranski@gmail.com",
   /** Format za tel: link i WhatsApp (bez + i razmaka za wa.me) */
   phoneDisplay: "+381 61 289 2059",
   phoneE164: "+381612892059",
