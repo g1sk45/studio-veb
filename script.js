@@ -9,7 +9,7 @@
 
   const CFG = window.SITE_CONFIG || {
     url: "https://studioveb.rs",
-    email: "ognjen@studioveb.rs",
+    email: "ognjenbandobranski@gmail.com",
     phoneDisplay: "+381 61 289 2059",
     phoneE164: "+381612892059",
     whatsapp: "381612892059",
